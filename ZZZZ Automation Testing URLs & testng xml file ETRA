@@ -1,0 +1,255 @@
+<class name="TestNG.DataDrivenTestingFinal">
+                <methods><include name="loginTest"/>
+                </methods>
+            </class>
+            <class name="TestNG.LoginTestData">
+                <methods><include name="loginTest"/>
+                </methods>
+            </class>
+            <class name="TestNG.SampleTest">
+                <methods><include name="test"/>
+                </methods>
+            </class>
+            <class name="TestNG_DataDrivenTesting_Practice.DataDrivenTestingPractice">
+                <methods><include name="loginTest"/>
+                    <include name="positiveLoginTest"/>
+                </methods>
+            </class>
+            <class name="TestNG_DataDrivenTesting_Practice.DataDrivenTestingPractice_1">
+                <methods><include name="PositiveLoginTest"/>
+                </methods>
+            </class>
+            <class name="TestNG_DataDrivenTesting_Practice.TestLogoutButton">
+                <methods><include name="LogoutButtonTest"/>
+                </methods>
+            </class>
+
+            $$$$$$$$$$ testng.xml original file $$$$$$$$
+
+            <?xml version="1.0" encoding="UTF-8"?>
+            <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+            <suite name="All Test Suite">
+                <test verbose="2" preserve-order="true" name="/Users/gautamkumar/Documents/Gautam_MacBookAir/My Documents/Study_Trainings_Interviews/Quality Assurance Study/Automation Testing/Selenium with Java Automation Testing/Selenium_with_Java_Projects_IntelliJ/Selenium">
+                    <classes>
+                        <class name="demo_accenture.TestClass01">
+                            <methods><include name="method01"/>
+                                <include name="method02"/>
+                                <include name="method03"/>
+                            </methods>
+                        </class>
+                        <class name="demo_accenture.TestClass02">
+                            <methods><include name="registration"/>
+                                <include name="login"/>
+                                <include name="logout"/>
+                            </methods>
+                        </class>
+                        <class name="demo_accenture.TestClass03">
+                            <methods><include name="method01"/>
+                            </methods>
+                        </class>
+                        <class name="demo_accenture.TestClass04">
+                            <methods><include name="login"/>
+                            </methods>
+                        </class>
+                        <class name="demo_accenture.TestClass05">
+                            <methods><include name="method01"/>
+                                <include name="method02"/>
+                            </methods>
+                        </class>
+                        <class name="demo_accenture.TestClass06">
+                            <methods><include name="method01"/>
+                                <include name="method02"/>
+                            </methods>
+                        </class>
+                        <class name="demo_accenture.TestClass07">
+                            <methods><include name="method01"/>
+                                <include name="method02"/>
+                                <include name="method03"/>
+                            </methods>
+                        </class>
+                        <class name="demo_accenture.TestClass08">
+                            <methods><include name="method01"/>
+                                <include name="method02"/>
+                                <include name="method03"/>
+                            </methods>
+                        </class>
+                    </classes>
+                </test>
+            </suite>
+
+            $$$$ Working file $$$$
+
+            <?xml version="1.0" encoding="UTF-8"?>
+            <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+            <suite name="TestSuite01" parallel="tests">
+                <test thread-count="5" name="TestCase01">
+
+                    <classes>
+                        <class name="demo_accenture.TestClass01"/>
+                        <class name="demo_accenture.TestClass02"/>
+                        <class name="demo_accenture.TestClass03"/>
+                        <class name="demo_accenture.TestClass04"/>
+
+                    </classes>
+                </test>
+                <test thread-count="5" name="TestCase02">
+                    <classes>
+                        <class name="demo_accenture.TestClass05"/>
+                        <class name="demo_accenture.TestClass06"/>
+                        <class name="demo_accenture.TestClass07"/>
+                        <class name="demo_accenture.TestClass08"/>
+                    </classes>
+
+                </test>
+            </suite>
+
+            $$ Packages $$
+            <?xml version="1.0" encoding="UTF-8"?>
+            <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+            <suite name="TestSuite01">
+                <test thread-count="5" name="TestCase01">
+
+                    <packages>
+                        <package name="demo_accenture"></package>
+                    </packages>
+
+                </test>
+            </suite>
+
+            $$$ Include and exclude $$$$
+
+            <?xml version="1.0" encoding="UTF-8"?>
+            <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+            <suite name="TestSuite01">
+                <test thread-count="5" name="TestCase01">
+
+                   <classes>
+                       <class name="demo_accenture.TestClass07">
+                           <methods>
+                               <exclude name="method01"></exclude>
+                               <include name="method02"></include>
+                               <include name="method03"></include>
+                           </methods>
+                       </class>
+
+                       <class name="demo_accenture.TestClass08">
+                           <methods>
+                               <exclude name="method01"></exclude>
+                           </methods>
+                       </class>
+
+                   </classes>
+
+                </test>
+            </suite>
+            =================================================
+            URL:https://www.amazon.in/
+            Home Page Signin: //a[@class='nav-action-signin-button']
+            Username text box:id = ap_email
+            continue: id=continue
+            password:id=ap_password
+            Sign In Page 'Sign In': id=signInSubmit
+
+            Signout: //a[@id='nav-item-signout']
+            Account List: //div//a[@id='nav-link-accountList'] or //a[@id='nav-link-accountList']
+            arrow://a[@id='nav-link-accountList']/span/span[@class='nav-icon nav-arrow']
+            Your Account: //span[text()='Your Account']
+
+
+            New Customer/ Start here: //div[@id='nav-flyout-ya-newCust']//a[@class='nav-a']
+            //*[@id="nav-signin-tooltip"]/a
+            SignUp/Create Amazon Account: //a[@id='createAccountSubmit']
+            Your Name://div[@class='a-row a-spacing-base']//input[@id='ap_customer_name'] or //input[@id='ap_customer_name']
+            Mobile Number: //input[@id='ap_phone_number']
+            Password: //input[@id='ap_password']
+            Verify mobile number://input[@id='continue']
+            Amazon icon: //a[@class='a-link-nav-icon']
+            Solve this puzzle://h1[@id='aacb-captcha-header']
+
+            Search box: id = twotabsearchtextbox
+            Search Submit Button: id = nav-search-submit-button
+
+            //div[@class='two-pane-results-container']//div[@role='button'] 10 suggested items captured
+            //div[@class='left-pane-results-container']/div[1] --> Final Only one out of 10 suggested items captured
+
+            for loop 1+(i=0)://div[@class='left-pane-results-container']//div[1+i]
+
+            ================== Left Navigation Panel ==============
+
+            Left Navigation Hamburger Menu: //a[@id='nav-hamburger-menu']
+            Hello Sign In: //div[@id='hmenu-customer-name']/b or
+            Trending://div[@id='hmenu-content']/ul/li/div[text()='Trending']
+            Digital Content and Devices: //div[@id='hmenu-content']/ul/li/div[text()='Digital Content and Devices']
+            Shop by Category: //div[@id='hmenu-content']/ul/li/div[text()='Shop by Category']
+            Programs & Features: //div[@id='hmenu-content']/ul/li/div[text()='Programs & Features']
+            Help & Settings: //div[@id='hmenu-content']/ul/li/div[text()='Help & Settings']
+            Left Navigation Hamburger Menu All <li> tags links: //div[@id='hmenu-content']/ul[@class='hmenu hmenu-visible hmenu-translateX']/li OR Final: //div[@id='hmenu-content']/ul[@class='hmenu hmenu-translateX hmenu-visible']/li
+
+            ======================== Left Navigation Panel Functionality XPath and Corresponding Pages XPath ========
+
+            Best Sellers: //*[@id="hmenu-content"]/ul[1]/li[2]/a --> Amazon Bestsellers: //*[@id="zg_banner_text"]
+            New Releases: //*[@id="hmenu-content"]/ul[1]/li[3]/a --> Amazon Hot New Releases: //*[@id="zg_banner_text"]
+            Movers and Shakers: //*[@id="hmenu-content"]/ul[1]/li[4]/a --> Movers and Shakers: //*[@id="zg_banner_text"]
+            Amazon miniTV- FREE entertainment: //*[@id="hmenu-content"]/ul[1]/li[7]/a --> //*[@id="appContainer"]/nav/div[1]/a/h1
+            Echo & Alexa: //*[@id="hmenu-content"]/ul[1]/li[8]/a --> //*[@id="hmenu-content"]/ul[2]/li[2]/div --> Back button: //*[@id="hmenu-content"]/ul[2]/li[1]/a/div/i
+            Fire TV: //*[@id="hmenu-content"]/ul[1]/li[9]/a --> //*[@id="hmenu-content"]/ul[3]/li[2]/div/div --> Back Button: //*[@id="hmenu-content"]/ul[3]/li[1]/a/div
+            Kindle E-Readers & eBooks: //*[@id="hmenu-content"]/ul[1]/li[10]/a --> //*[@id="hmenu-content"]/ul[4]/li[2]/div --> Back Button (Main Menu): //*[@id="hmenu-content"]/ul[4]/li[1]/a/div/i
+            Audible Audiobooks: //*[@id="hmenu-content"]/ul[1]/li[11]/a --> //*[@id="hmenu-content"]/ul[5]/li[2]/div --> Back Button (Main Menu): //*[@id="hmenu-content"]/ul[5]/li[1]/a/div/i
+            Amazon Prime Video: //*[@id="hmenu-content"]/ul[1]/li[12]/a --> //*[@id="hmenu-content"]/ul[6]/li[2]/div --> Back Button (Main Menu): //*[@id="hmenu-content"]/ul[6]/li[1]/a/div/i
+            Amazon Prime Music: //*[@id="hmenu-content"]/ul[1]/li[13]/a --> //*[@id="hmenu-content"]/ul[7]/li[2]/div --> Back Button (Main Menu): //*[@id="hmenu-content"]/ul[7]/li[1]/a/div/i
+            Mobiles, Computers: //*[@id="hmenu-content"]/ul[1]/li[16]/a --> //*[@id="hmenu-content"]/ul[8]/li[2]/div --> Back Button (Main Menu): //*[@id="hmenu-content"]/ul[8]/li[1]/a/div/i
+            TV, Appliances, Electronics: //*[@id="hmenu-content"]/ul[1]/li[17]/a --> //*[@id="hmenu-content"]/ul[9]/li[2]/div --> Back Button (Main Menu): //*[@id="hmenu-content"]/ul[9]/li[1]/a/div/i
+            Men's Fashion: //*[@id="hmenu-content"]/ul[1]/li[18]/a --> //*[@id="hmenu-content"]/ul[10]/li[2]/div --> //*[@id="hmenu-content"]/ul[10]/li[1]/a/div/i
+            Women's Fashion: //*[@id="hmenu-content"]/ul[1]/li[19]/a --> //*[@id="hmenu-content"]/ul[11]/li[2]/div --> //*[@id="hmenu-content"]/ul[11]/li[1]/a/div/i
+            See All: //*[@id="hmenu-content"]/ul[1]/li[20]/a[1]
+            Home, Kitchen, Pets: //*[@id="hmenu-content"]/ul[1]/ul[1]/li[2]/a --> //*[@id="hmenu-content"]/ul[12]/li[2]/div --> //*[@id="hmenu-content"]/ul[12]/li[1]/a/div/i
+            Beauty, Health, Grocery: //*[@id="hmenu-content"]/ul[1]/ul[1]/li[3]/a --> //*[@id="hmenu-content"]/ul[13]/li[2]/div --> //*[@id="hmenu-content"]/ul[13]/li[1]/a/div/i
+            Sports, Fitness, Bags, Luggage: //*[@id="hmenu-content"]/ul[1]/ul[1]/li[4]/a --> //*[@id="hmenu-content"]/ul[14]/li[2]/div --> //*[@id="hmenu-content"]/ul[14]/li[1]/a/div/i
+            Toys, Baby Products, Kids' Fashion: //*[@id="hmenu-content"]/ul[1]/ul[1]/li[5]/a --> //*[@id="hmenu-content"]/ul[15]/li[2]/div --> //*[@id="hmenu-content"]/ul[15]/li[1]/a/div/i
+            Car, Motorbike, Industrial: //*[@id="hmenu-content"]/ul[1]/ul[1]/li[6]/a --> //*[@id="hmenu-content"]/ul[16]/li[2]/div --> //*[@id="hmenu-content"]/ul[16]/li[1]/a
+            Books: //*[@id="hmenu-content"]/ul[1]/ul[1]/li[7]/a --> //*[@id="hmenu-content"]/ul[17]/li[2]/div --> //*[@id="hmenu-content"]/ul[17]/li[1]/a
+            Movies, Music & Video Games: //*[@id="hmenu-content"]/ul[1]/ul[1]/li[8]/a --> //*[@id="hmenu-content"]/ul[18]/li[2]/div --> //*[@id="hmenu-content"]/ul[18]/li[1]/a/div
+            See Less: //*[@id="hmenu-content"]/ul[1]/li[20]/a[2]
+            Amazon Pay: //*[@id="hmenu-content"]/ul[1]/li[23]/a --> //*[@id="apay-sticker"]/a/img --> driver.navigate().back() [Chrome browser back button]
+            Gift Cards & Mobile Recharges: //*[@id="hmenu-content"]/ul[1]/li[24]/a --> //*[@id="hmenu-content"]/ul[19]/li[2]/div --> //*[@id="hmenu-content"]/ul[19]/li[1]/a/div
+            Amazon Launchpad: //*[@id="hmenu-content"]/ul[1]/li[25]/a --> //*[@id="s-refinements"]/div[1]/div/span --> driver.navigate().back() [Chrome browser back button]
+            Handloom and Handicrafts: //*[@id="hmenu-content"]/ul[1]/li[26]/a --> //*[@id="s-refinements"]/div/div/h1 --> driver.navigate().back() [Chrome browser back button]
+            See all: //*[@id="hmenu-content"]/ul[1]/li[27]/a[1]
+            Amazon Saheli: //*[@id="hmenu-content"]/ul[1]/ul[2]/li[2]/a --> //*[@id="merchandised-search-2"]/div/div/div/div[1]/h2 [Top deals by women-led businesses] --> driver.navigate().back() [Chrome browser back button]
+            Amazon Combos: //*[@id="hmenu-content"]/ul[1]/ul[2]/li[3]/a --> //*[@id="CardInstancesYqOLR3MaNZBh8jGYJfqHQ"]/div[1]/div[3]/div/h2/span [Combo offers on Beauty] --> driver.navigate().back() [Chrome browser back button]
+            Amazon Custom: //*[@id="hmenu-content"]/ul[1]/ul[2]/li[4]/a --> //*[@id="sobe_d_b_5-carousel"]/div[1]/h2 [Best gifting options] --> driver.navigate().back() [Chrome browser back button]
+            Flight Tickets: //*[@id="hmenu-content"]/ul[1]/ul[2]/li[5]/a --> //*[@id="authportal-main-section"]/div[2]/div[2]/div[1]/form/div/div/div/h1 [Sign in] --> driver.navigate().back() [Chrome browser back button]
+            Buy more, Save more: //*[@id="hmenu-content"]/ul[1]/ul[2]/li[6]/a --> //*[@id="contentGrid_275590"]/div/div[1]/div/div/div/h2 --> driver.navigate().back() [Chrome browser back button]
+            Clearance store: //*[@id="hmenu-content"]/ul[1]/ul[2]/li[7]/a --> //*[@id="sobe_d_b_7-carousel"]/div[1]/h2 --> driver.navigate().back() [Chrome browser back button]
+            International Brands: //*[@id="hmenu-content"]/ul[1]/ul[2]/li[8]/a --> //*[@id="merchandised-search-4"]/div/div/div/div[1]/h2 --> driver.navigate().back() [Chrome browser back button]
+            See less: //*[@id="hmenu-content"]/ul[1]/li[27]/a[2]
+            Your Account: //*[@id="hmenu-content"]/ul[1]/li[30]/a --> //*[@id="a-page"]/div[1]/div/div[1]/h1 --> driver.navigate().back() [Chrome browser back button]
+            Customer Service: //*[@id="hmenu-content"]/ul[1]/li[31]/a --> //*[@id="a-page"]/div[1]/div[2]/h1 --> driver.navigate().back() [Chrome browser back button]
+            Sign in: //*[@id="hmenu-content"]/ul[1]/li[32]/a --> //*[@id="authportal-main-section"]/div[2]/div[2]/div[1]/form/div/div/div/h1 --> driver.navigate().back() [Chrome browser back button]
+==============================================================================
+
+div-> id:nav-xshop
+class:nav-progressive-content
+//div[@id='nav-xshop']/a[1]
+
+Amazon miniTV://div[@id='nav-xshop']/a[1]
+Sell://div[@id='nav-xshop']/a[2]
+Best Sellers://div[@id='nav-xshop']/a[3]
+Mobiles://div[@id='nav-xshop']/a[4]
+Today's Deals://div[@id='nav-xshop']/a[5]
+Prime: (Select functions can be used): //div[@id='nav-xshop']/a[6]
+Customer Service://div[@id='nav-xshop']/a[7]
+Electronics://div[@id='nav-xshop']/a[8]
+
+=================================================================
+
+Search By Category/Search Drop-Down / Select Functionality /
+//div[@class='nav-search-scope nav-sprite']
+
+//select[@id='searchDropdownBox']/option
+
+=================================================================
+
+//a/img[@class='attachment-shop_catalog size-shop_catalog wp-post-image' and @alt='Thinking in HTML'] OR //a/img[@alt='Thinking in HTML']
+//a/img[@alt='Selenium Ruby']
+//a/img[@alt='Mastering JavaScript']
